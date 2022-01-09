@@ -16,4 +16,5 @@
 
 ---
   
-## 🐼 Spring [Link]()      
+## 🐼 Spring [Link](https://github.com/minyul/Tech_Interview_Back/tree/main/Spring)      
+## 🐼 Java [Link](https://github.com/minyul/Tech_Interview_Back/tree/main/Java)      
