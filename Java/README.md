@@ -15,3 +15,26 @@ static 불록은 클라스가 최초 로딩될 때 수행되므로 생성자 실
 
 GC의 대상이 아니기에 Array 나 Map등의 Collection을 사용하면 OutOfMemory 메모리 릭이 나올 수 있다. <br>
 
+## POJO란 무엇인가요?
+
+우선 POJO란 객체가 아니라 클래스다.
+
+클래스를 확장하거나 인터페이스를 구현하지 않는다. <br>
+클래스 변경이 가능하다. <br>
+매개변수를 허용하지 않는 public 생성자를 갖는다. (기본생성자) <br>
+private 변수의 값을 저장하고 조회하는데 public 메소드를 사용한다. <br>
+
+POJO의 하나의 예이다. <br>
+
+```java 
+public POJO {
+ private int value = 0;
+ 
+ public POJO() {
+   // 기본 생성자
+ }
+ 
+ public getValue() { return value; };
+ public setValue(final int value) { this.value = value; };
+}
+```
