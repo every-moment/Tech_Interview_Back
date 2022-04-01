@@ -56,3 +56,14 @@ public POJO {
 
 이러한 입력, 출력에 대한 스트림 종류가 많은 데 입력은 말그대로 그 주체에서 읽는 거니까 Reader 를 쓰고 출력은 내뱉고 써야하느까 Writer 을 쓴다. <br>
 ![](https://images.velog.io/images/minyul/post/a7cbfdfc-24ee-4161-8bc7-3e04e7d1f409/image.png) <br>
+
+## GC
+
+OutOfMemoryError 일 때, 
+
+1. GC verbose 를 켠다 -verbose:gc
+2. verbose GC 출력을 살펴 Java Heap footprint를 살핀다. (Young OLD 과 Gen 의 비율 등)
+3. verbose GC 출력이 JConsole 과 같은 툴을 사용하여 Java Heap 이 시간이 경과하면서 점점 사용률이 올라가는지 살핀다.
+4. Young Gen 에서 다수의 짧은 주기의 객체들이 생성되는 지 살핀다. Java Heap 영역의 필요한 만큼보다 작을 때 이러한 현상이 일어난다.
+5. 메모리 누수나 Old Gen footprint 를 살릴 필요가 있을 때, -XX:+HeapDumpOnOutOfMemoryError JVM 옵션 추가한 뒤 프로그램을 실행하여,
+OOM 발생 후 Heap Dump 를 얻을 수 있는데 Memory Analyzer 나 JHat 과 같은 툴을 이용하는 분석하는데 용이할 것이다.
